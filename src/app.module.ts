@@ -8,11 +8,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   imports: [UsersModule, 
   TypeOrmModule.forRoot({
   type: 'oracle',
-  host: 'localhost',
-  port: 1521,
-  username: 'testapp',
-  password: 'testapp_local',
-  serviceName: 'FREEPDB1',
+  host: process.env.DB_HOST ?? 'localhost',
+  port: parseInt(process.env.DB_PORT ?? '1521', 10),
+  username: process.env.DB_USER ?? 'testapp',
+  password: process.env.DB_PASSWORD ?? 'testapp_local',
+  serviceName: process.env.DB_SERVICE_NAME ?? 'FREEPDB1',
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   synchronize: true,
 })

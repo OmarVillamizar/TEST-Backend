@@ -1,0 +1,55 @@
+# Dependencies (reinstaladas dentro de la imagen)
+node_modules
+
+# Build output (se genera en la etapa builder)
+dist
+build
+*.tsbuildinfo
+
+# Tests y cobertura
+test
+coverage
+.nyc_output
+**/*.spec.ts
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Entorno / secretos (NUNCA dentro de la imagen)
+.env
+.env.*
+!.env.example
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# Editores / IDE
+.vscode
+.idea
+*.sublime-workspace
+
+# Tooling / cache
+.atl
+.temp
+.tmp
+.prettierrc
+eslint.config.mjs
+
+# Docs y meta
+README.md
+*.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker (evita auto-referencia en el contexto)
+Dockerfile
+.dockerignore
+docker-compose*.yml
